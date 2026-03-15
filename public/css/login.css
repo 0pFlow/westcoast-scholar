@@ -1,0 +1,204 @@
+/* Stronger overlay on login page */
+body::before {
+  background: linear-gradient(
+    180deg,
+    rgba(77, 119, 126, 0.32) 0%,
+    rgba(38, 62, 66, 0.40) 52%,
+    rgba(38, 62, 66, 0.62) 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+/* Optional: zoom the background a bit */
+.login-background {
+  position: fixed;
+  inset: 0;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+/* Overlay container */
+.login-overlay {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+}
+
+/* Main box */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Email input */
+.login-email {
+  width: min(252px, 85vw);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(126, 166, 169, 0.36);
+  background: rgba(38, 62, 66, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 34px rgba(22, 36, 38, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  color: rgba(236, 243, 242, 0.92);
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.login-email::placeholder {
+  color: rgba(193, 210, 206, 0.72);
+}
+
+.login-email:focus {
+  border-color: rgba(126, 166, 169, 0.52);
+  background: rgba(63, 97, 103, 0.46);
+}
+
+/* Monokrom gul varning för required/invalid email */
+.login-email.is-warn {
+  border-color: rgba(233, 206, 63, 0.9);
+  box-shadow: 0 0 0 3px rgba(233, 206, 63, 0.22);
+  background: rgba(77, 119, 126, 0.44);
+}
+
+.login-email.is-warn::placeholder {
+  color: rgba(233, 206, 63, 0.92);
+}
+
+.login-email.is-warn:focus {
+  border-color: rgba(233, 206, 63, 0.95);
+  box-shadow: 0 0 0 3px rgba(233, 206, 63, 0.24);
+}
+
+.email-hint {
+  font-size: 0.9rem;
+  color: rgba(233, 206, 63, 0.95);
+  text-align: center;
+  min-height: 1.2em;
+}
+
+/* PIN label */
+.pin-label {
+  color: rgba(236, 243, 242, 0.90);
+  font-size: 0.95rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cancel-link {
+  cursor: pointer;
+  color: rgba(193, 210, 206, 0.78);
+}
+
+.cancel-link:hover {
+  text-decoration: underline;
+}
+
+.error-text {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* Hidden PIN input */
+#pinHiddenInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* PIN boxes */
+.pin-boxes {
+  display: flex;
+  gap: 10px;
+}
+
+.pin-boxes.shake {
+  animation: pin-shake 280ms ease-in-out;
+}
+
+@keyframes pin-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-10px); }
+  40%  { transform: translateX(10px); }
+  60%  { transform: translateX(-6px); }
+  80%  { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+/* Blink animation */
+@keyframes blink {
+  from, 25%, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* PIN box base */
+.pin-box {
+  position: relative;
+  width: 52px;
+  height: 68px;
+  border-radius: 10px;
+  border: 1px solid rgba(126, 166, 169, 0.34);
+  background: rgba(38, 62, 66, 0.38);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(22, 36, 38, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: rgba(236, 243, 242, 0.92);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+/* Texten (digit/dot) */
+.pin-box span {
+  display: inline-block;
+  transform: translateY(-2px);
+  transition: opacity 200ms, transform 200ms;
+}
+
+/* Active caret */
+.pin-box.is-active::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  bottom: 10px;
+  width: 70%;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(233, 206, 63, 0.88);
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+/* Error state */
+.pin-boxes.is-error .pin-box {
+  border-color: rgba(227, 87, 84, 0.6);
+  background: rgba(227, 87, 84, 0.12);
+}
+
+/* Masking state */
+.pin-box.is-masking span {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+body.ui-stable .pin-box.is-active::after {
+  animation-name: blink !important;
+  animation-duration: 1.6s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+}
+
+body.ui-stable .pin-boxes.shake {
+  animation-name: pin-shake !important;
+  animation-duration: 280ms !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: 1 !important;
+}

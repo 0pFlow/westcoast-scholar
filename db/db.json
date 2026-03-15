@@ -1,0 +1,91 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "student",
+      "name": "Student User",
+      "email": "student@westcoast.se",
+      "pin": "1234"
+    },
+    {
+      "id": 2,
+      "role": "teacher",
+      "name": "Teacher User",
+      "email": "teacher@westcoast.se",
+      "pin": "4321"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "JavaScript Fundamentals",
+      "courseNumber": "JS-101",
+      "days": 3,
+      "price": 7900,
+      "mode": [
+        "classroom",
+        "distance"
+      ],
+      "startDate": "2026-03-20",
+      "image": "../assets/react-essentials.avif",
+      "ratingAvg": 4.6,
+      "teacher": "Larry Fink",
+      "popular": true,
+      "description": "Practical introduction course with clear progression and focus on real application. You learn the basics through hands-on exercises and real-world examples.",
+      "content": "Variables & types · Functions · DOM manipulation · Events · Async/Await · Modules"
+    },
+    {
+      "id": 2,
+      "title": "HTML & CSS Modern Layout",
+      "courseNumber": "FE-110",
+      "days": 2,
+      "price": 5900,
+      "mode": [
+        "classroom"
+      ],
+      "startDate": "2026-04-02",
+      "image": "../assets/html-css.avif",
+      "ratingAvg": 4.4,
+      "teacher": "Larry Fink",
+      "popular": false,
+      "description": "You build modern, responsive layouts with structure, semantics and reusable component patterns. The course alternates between short theory and design-driven coding exercises.",
+      "content": "Box model · Flexbox · CSS Grid · Responsive design · CSS variables · Animations"
+    },
+    {
+      "id": 3,
+      "title": "React Essentials",
+      "courseNumber": "RE-201",
+      "days": 4,
+      "price": 9900,
+      "mode": [
+        "distance"
+      ],
+      "startDate": "2026-04-18",
+      "image": "../assets/javascript-fund.avif",
+      "ratingAvg": 4.7,
+      "teacher": "Larry Fink",
+      "popular": true,
+      "description": "Deep dive into React with component architecture, state management and clear workflows. Focus is on building stable interfaces that work in real projects.",
+      "content": "JSX · Components · Props & State · useEffect · React Router · Context API"
+    },
+    {
+      "id": 4,
+      "title": "Node.js API Basics",
+      "courseNumber": "BE-210",
+      "days": 3,
+      "price": 8900,
+      "mode": [
+        "classroom",
+        "distance"
+      ],
+      "startDate": "2026-05-05",
+      "image": "../assets/nodejs.avif",
+      "ratingAvg": 4.5,
+      "teacher": "Larry Fink",
+      "popular": false,
+      "description": "You learn to build and structure REST APIs with Node.js from scratch to finished endpoint. The course emphasizes debugging, validation and robust server logic.",
+      "content": "Node fundamentals · Express · REST principles · Middleware · Error handling · json-server"
+    }
+  ],
+  "bookings": []
+}

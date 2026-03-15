@@ -1,0 +1,25 @@
+{
+    "name": "westcoast-scholar-inl1",
+    "version": "1.0.0",
+    "description": "Westcoast Scholar - Inlämningsuppgift 1",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "api": "json-server --watch ./db/db.json --port 3001",
+        "test": "vitest run",
+        "test:ui": "vitest --ui",
+        "typecheck": "tsc --noEmit"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@vitest/ui": "^4.0.18",
+        "happy-dom": "^20.7.0",
+        "json-server": "0.17.4",
+        "typescript": "^5.9.3",
+        "vite": "^7.3.1",
+        "vitest": "^4.0.18"
+    }
+}

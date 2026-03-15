@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>document.documentElement.classList.add("js-loading");</script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <script type="module" src="/src/api/app.js" defer></script>
+    <link
+      rel="icon"
+      href="../assets/books-book-svgrepo-com.svg"
+      type="image/x-icon"
+    />
+
+    <title>Login - Westcoast Scholar</title>
+  </head>
+  <body>
+    <div class="login-background"></div>
+
+    <!-- Overlay -->
+    <div class="login-overlay">
+      <div class="login-container">
+        <div id="registeredBanner" class="booking-success" hidden>
+          Account created – sign in below
+        </div>
+
+        <!-- Email -->
+        <input
+          type="email"
+          id="emailInput"
+          class="login-email"
+          placeholder="Email"
+          autocomplete="email"
+          required
+        />
+
+        <div id="emailHint" class="email-hint" hidden>
+          Please enter a valid email first.
+        </div>
+
+        <!-- PIN label -->
+        <div class="pin-label">
+          Enter PIN
+          <a href="index.html">
+            <span class="cancel-link"> Cancel </span>
+          </a>
+          <span id="loginError" class="error-text" hidden>
+            Wrong email or PIN
+          </span>
+        </div>
+
+        <input
+          type="password"
+          id="pinHiddenInput"
+          maxlength="4"
+          inputmode="numeric"
+          autocomplete="one-time-code"
+        />
+
+        <!-- PIN boxes -->
+        <div class="pin-boxes" id="pinBoxes">
+          <div class="pin-box"><span></span></div>
+          <div class="pin-box"><span></span></div>
+          <div class="pin-box"><span></span></div>
+          <div class="pin-box"><span></span></div>
+        </div>
+
+        <a href="register.html" class="course-btn cancel-btn">Register</a>
+      </div>
+    </div>
+  </body>
+</html>

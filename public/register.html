@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>document.documentElement.classList.add("js-loading");</script>
+
+    <link rel="preload" as="image" href="../assets/bg.jpg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/courses.css" />
+
+    <script type="module" src="/src/api/app.js" defer></script>
+
+    <link
+      rel="icon"
+      href="../assets/books-book-svgrepo-com.svg"
+      type="image/x-icon"
+    />
+
+    <title>Register - Westcoast Scholar</title>
+  </head>
+  <body>
+    <div class="login-background"></div>
+
+    <div class="login-overlay">
+      <div class="login-container">
+        <section class="courses-header">
+          <h1 class="courses-title">Register</h1>
+          <p class="courses-subtitle">Create an account to sign in with PIN.</p>
+        </section>
+
+        <section class="page-card booking-form-card">
+          <form id="registerForm" class="booking-form" novalidate>
+            <div class="booking-form-grid">
+              <div class="booking-field">
+                <span>I am</span>
+                <div class="pin-role-select">
+                  <button type="button" class="course-btn role-btn" data-role="student">Student</button>
+                  <button type="button" class="course-btn role-btn" data-role="teacher">Teacher</button>
+                </div>
+              </div>
+
+              <label class="booking-field">
+                <span>Name</span>
+                <input class="booking-input" name="name" type="text" autocomplete="name" required />
+              </label>
+
+              <label class="booking-field">
+                <span>Email</span>
+                <input class="booking-input" name="email" type="email" autocomplete="email" required />
+              </label>
+
+              <label class="booking-field">
+                <span>PIN</span>
+                <input class="booking-input" name="pin" type="text" inputmode="numeric" maxlength="4" required />
+              </label>
+            </div>
+
+            <div class="booking-form-actions">
+              <button type="submit" class="course-btn is-primary">Register</button>
+              <button type="button" class="course-btn cancel-btn" id="registerCancelBtn">Cancel</button>
+            </div>
+          </form>
+
+          <div class="courses-state" id="registerState" hidden></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

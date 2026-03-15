@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>document.documentElement.classList.add("js-loading");</script>
+
+    <link rel="preload" as="image" href="../assets/bg.jpg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/courses.css" />
+
+    <script type="module" src="/src/api/app.js" defer></script>
+
+    <link
+      rel="icon"
+      href="../assets/books-book-svgrepo-com.svg"
+      type="image/x-icon"
+    />
+
+    <title>Admin - Westcoast Scholar</title>
+  </head>
+
+  <body>
+    <div class="screen">
+      <div class="pill"></div>
+
+      <div class="hud courses-hud">
+        <div class="top-row">
+          <div class="left-stack">
+            <div class="time-row">
+              <div class="time" id="time">--:--</div>
+
+              <div class="weather" id="weather">
+                <img
+                  id="weatherIcon"
+                  class="weather-icon"
+                  src="../assets/clear.svg"
+                  alt="weather icon"
+                  loading="eager"
+                  decoding="async"
+                />
+                <span id="temp">--C</span>
+              </div>
+            </div>
+
+            <div class="sub-row">
+              <span class="hint">Westcoast Scholar</span>
+            </div>
+
+            <div class="nav-row" aria-label="Main navigation">
+              <nav class="nav-tabs tabs">
+                <a class="nav-tab tab" href="courses.html">Courses</a>
+                <a class="nav-tab tab" href="booking.html">Bookings</a>
+                <a class="nav-tab tab is-active" href="admin.html" aria-current="page"
+                  >Admin</a
+                >
+              </nav>
+
+              <button
+                class="nav-tab nav-logout logout-btn"
+                id="logoutBtn"
+                type="button"
+                aria-label="Log out"
+                title="Log out"
+              >
+                <span class="nav-icon enter-icon" aria-hidden="true">&#x21AA;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="courses-main">
+        <section class="courses-header">
+          <h1 class="courses-title" id="adminBookingsTitle">Admin</h1>
+          <p class="courses-subtitle">
+            Overview of all bookings with course and user data.
+          </p>
+        </section>
+
+        <section class="courses-grid" id="adminBookingsGrid" aria-live="polite"></section>
+        <h2 class="courses-title">All Courses</h2>
+        <div class="courses-grid" id="adminCoursesGrid"></div>
+        <div class="courses-state" id="adminBookingsState" hidden>Loading admin bookings...</div>
+      </main>
+    </div>
+  </body>
+</html>

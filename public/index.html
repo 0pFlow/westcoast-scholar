@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>document.documentElement.classList.add("js-loading");</script>
+    <link rel="preload" as="image" href="../assets/clear.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/time.css" />
+    <script type="module" src="/src/api/app.js" defer></script>
+
+    <link
+      rel="icon"
+      href="../assets/books-book-svgrepo-com.svg"
+      type="image/x-icon"
+    />
+
+    <title>Westcoast Scholar</title>
+  </head>
+  <body>
+    <div class="screen">
+      <div class="pill"></div>
+      <div class="hud">
+        <div class="clock-row">
+          <div class="time" id="time">--:--</div>
+
+          <a href="login.html">
+            <button class="enter-btn" id="enterBtn" aria-label="Enter">
+              <span class="enter-icon" aria-hidden="true">&#x21AA;</span>
+            </button></a
+          >
+
+          <div class="weather" id="weather">
+            <img
+              id="weatherIcon"
+              class="weather-icon"
+              src="../assets/clear.svg"
+              alt="weather icon"
+              loading="eager"
+              decoding="async"
+            />
+            <span id="temp">--&deg;C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
