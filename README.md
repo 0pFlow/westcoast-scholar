@@ -2,6 +2,8 @@
 
 En mini-SaaS utbildningsplattform byggd i vanilla JavaScript (ES modules), Vite och JSON Server.
 
+![Demo](assets/Scholar-demo.png)
+
 ## Kom igång
 
 ### Krav
