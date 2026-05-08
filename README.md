@@ -1,4 +1,4 @@
-# Westcoast Scholar – Inlämningsuppgift 1
+# Westcoast Scholar
 
 En mini-SaaS utbildningsplattform byggd i vanilla JavaScript (ES modules), Vite och JSON Server.
 
